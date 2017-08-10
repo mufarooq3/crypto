@@ -32,7 +32,7 @@ class FcmNotificationListner
         $message = $event->message;
 //        dd($message);
         $optionBuilder = new OptionsBuilder();
-        $optionBuilder->setTimeToLive(600*20);
+        $optionBuilder->setTimeToLive(60*20);
 
         $notificationBuilder = new PayloadNotificationBuilder($message['title']);
         $notificationBuilder->setBody($message['body'])
@@ -52,11 +52,8 @@ class FcmNotificationListner
         $downstreamResponse->numberSuccess();
         $downstreamResponse->numberFailure();
         $downstreamResponse->numberModification();
-
         $downstreamResponse->tokensToDelete();
-
         $downstreamResponse->tokensToModify();
-
         $downstreamResponse->tokensToRetry();
 
         return response('Notification Send', 200);

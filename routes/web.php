@@ -24,15 +24,3 @@ Route::get('/api/fech_form', 'ApiController@fetch_forum')->name('fetch_forum');
 Route::resource('threads', 'ThreadController');
 Route::resource('posts', 'PostController');
 Route::get('profile','HomeController@profile')->name("profile");
-
-
-
-Route::get('api/get_forum/{id}', function($id) {
-    return (\App\forum::where('type','=',$id)->get())->toArray();
-})->middleware('cors');
-Route::get('api/get_thread/{id}', function($id) {
-    return json_encode(\App\thread::where('slug','=',$id)->get());
-})->middleware('cors');
-Route::get('api/get_post/{id}', function($id) {
-    return json_encode(\App\post::where('thread_id','=',$id)->get());
-})->middleware('cors');
