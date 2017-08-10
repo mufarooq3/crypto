@@ -1,21 +1,14 @@
-/*
-Give the service worker access to Firebase Messaging.
-Note that you can only use Firebase Messaging here, other Firebase libraries are not available in the service worker.
-*/
-importScripts('https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js')
-importScripts('https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js')
+self.addEventListener('push', function(event) {
+    console.log('[Service Worker] Push Received.');
+    console.log("[Service Worker] Push had this data: ",event.data.text());
 
-/*
-Initialize the Firebase app in the service worker by passing in the messagingSenderId.
-*/
-firebase.initializeApp({
-  'messagingSenderId': '858162500879'
-})
+    const title = 'Push Codelab';
+    const options = {
+        body: 'Yay it works.',
+        icon: 'images/icon.png',
+        badge: 'images/badge.png'
+    };
 
-/*
-Retrieve an instance of Firebase Messaging so that it can handle background messages.
-*/
-const messaging1 = firebase.messaging()
-messaging1.setBackgroundMessageHandler(function(payload) {
- 
+    event.waitUntil(self.registration.showNotification(title, options));
+    event.waitUntil(notificationPromise);
 });
