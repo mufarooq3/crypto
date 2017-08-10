@@ -69,25 +69,3 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-<nav class="navbar navbar-default" style="background-color:#354c70;">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img src="assets/img/logotext.png" alt=""></a>
-        </div>
-        <ul class=" nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-bell" style="color:#fff !important;"></span></a></li>
-            <li class="user"> </li>
-            <li class="dropdown dropdown1 dropdown-mouse">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mouse </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbspProfile</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-time"></span>&nbspHistory</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbspSettings</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span>&nbspHelp</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>&nbspLogout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>

@@ -476,7 +476,7 @@
 
         function sendTokenToServer(token){
             $.ajax({
-                url: 'http://localhost/crypto/public/update_fcm_token',
+                url: {{config('app.url')}}update_fcm_token',
                 data: {
                     token: token
                 },
