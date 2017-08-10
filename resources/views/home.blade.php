@@ -449,24 +449,6 @@
 
     <script>
 
-        $(document).ready(function() {
-            toastr.options = {
-                "closeButton": true,
-                "debug": false,
-                "positionClass": "toast-top-right",
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            }
-
-        });
-
         $(document).ready(function () {
             $('#bit_coin').click(function () {
                 $('.main2').addClass('hide');
@@ -475,8 +457,9 @@
         });
 
         function sendTokenToServer(token){
+//            console.log('Sending token: '+token);
             $.ajax({
-                url: {{config('app.url')}}update_fcm_token',
+                url: '{{config("app.url")}}update_fcm_token',
                 data: {
                     token: token
                 },
@@ -580,7 +563,7 @@
                 '<div class="col-sm-9">'+
                 '<div class="text">'+
                 '<p> <strong>'+payload.notification.title+'</strong> </p>'+
-                '<p>'+payload.notificatoin.body+'</p>'+
+                '<p>'+payload.notification.body+'</p>'+
                 '</div>'+
                 '</div>'+
                 '</div>');
@@ -594,7 +577,7 @@
             remove_notify();
         }
         function add_nav_notify_card(payload){
-            $('#notify').append(' <li style="padding: 0px 0px 0px 0px !important;">'+
+            $('#dropdown-notification').append(' <li style="padding: 0px 0px 0px 0px !important;">'+
                 '<div class="notification">'+
                 '<p class="close"></p>'+
                 '<div class="col-sm-3">'+

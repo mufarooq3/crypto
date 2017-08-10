@@ -45,7 +45,7 @@ class HomeController extends Controller
         if($user) {
             $user->fcm_token = $request->token;
             $user->update();
-            return response('Token successfully updated.',200);
+            return response('Token: '.$user->fcm_token,200);
         }
         else
             return response('Guest user are not allowed to use notification service', 500);
